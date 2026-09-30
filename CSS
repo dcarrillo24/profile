@@ -1,0 +1,50 @@
+
+<style>
+body {
+  margin: 500px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 10px 10px 10px;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}
+
+.box {
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 60px;
+  padding: 20px;
+  font-size: 150%;
+}
+</style>
+<div>
+  <div class="box a">Aa</div>
+  <div class="box b">Bb</div>
+  <div class="box c">Cc</div>
+  <div class="box d">Dd</div>
+  <div class="box e">Ee</div>
+  <div class="box f">Ff</div>
+  <div class="box g">Gg</div>
+  <div class="box h">Hh</div>
+  <div class="box i">Ii</div>
+  <div class="box j">Jj</div>
+  <div class="box k">Kk</div>
+  <div class="box l">Ll</div>
+  <div class="box m">Mm</div>
+  <div class="box n">Nn</div>
+  <div class="box o">Oo</div>
+  <div class="box p">Pp</div>
+  <div class="box q">Qq</div>
+  <div class="box r">Rr</div>
+  <div class="box s">Ss</div>
+  <div class="box t">Tt</div>
+  <div class="box u">Uu</div>
+  <div class="box v">Vv</div>
+  <div class="box w">Ww</div>
+  <div class="box x">Xx</div>
+  <div class="box y">Yy</div>
+  <div class="box z">Zz</div>
+</div>
